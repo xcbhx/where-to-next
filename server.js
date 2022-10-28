@@ -4,6 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+require('dotenv').config();
+//Connect to the MongoDB database
+require('./config/database');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
