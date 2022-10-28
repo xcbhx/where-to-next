@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,18 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
+
 <body>
-    <nav><a href="/">Welcome Page</a></nav>
+    <nav>
+        <a href="/">Welcome Page</a>
+        <% if (user) { %>
+            <a href="" <%- title==='Add Destinations' ? 'class="active"' : '' %>>ADD DESTINATIONS</a>
+            <a href="/logout">LOG OUT</a>
+            <% } else { %>
+                <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+            <% } %>
+    </nav>
+
 </body>
+
 </html>
