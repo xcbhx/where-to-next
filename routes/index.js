@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/destinations');
 });
 
 
@@ -21,16 +21,16 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/travels',
+    successRedirect: '/destinations',
     // Change to what's best for YOUR app
-    failureRedirect: '/travels'
+    failureRedirect: '/destinations'
   }
 ));
 
 router.get('/logout', function(req, res) {
   req.logout(function() {
     // Change path for your "landing" page
-    res.redirect('/travels');
+    res.redirect('/destinations');
   });
 });
 

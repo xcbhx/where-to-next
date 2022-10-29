@@ -1,0 +1,18 @@
+<%= include('../partials/header') %>
+
+<form id="new-form" action="/destinations" method="POST">
+<label>Location:</label>
+<input type="text" name="location">
+<label>Arrival:</label>
+<input type="text" name="arrival">
+<label>Depart</label>
+<input type="date" name="depart">
+<label>Description</label>
+<input type="text" name="description">
+<label for="Image"></label>
+<input type="image" name="image">
+</form>
+
+
+
+<%= include('../partials/footer') %>

@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+<h2></h2>
+<table>
+    <thead>
+        <tr>
+            <th>location</th>
+            <th>arrival</th>
+            <th>depart</th>
+            <th>description</th>
+            <th>image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%  destinations.forEach(function(d) {%>
+        <tr>
+            <td>
+                <%= d.location %>
+            </td>
+            <td>
+                <%= d.arrival %>
+            </td>
+            <td>
+                <%= d.depart %>
+            </td>
+            <td>
+                <%= d.description %>
+            </td>
+            <td>
+                <%= d.image %>
+            </td>
+            <td><a href="/destinations/<%= d._id %>">Details</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+
+<%- include('../partials/footer') %>

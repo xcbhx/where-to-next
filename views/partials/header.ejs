@@ -6,20 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Document</title>
+    <title>WhereToNext</title>
 </head>
 
 <body>
     <nav>
-        <a href="/">Welcome Page</a>
+        <a href="/index">Welcome Page</a>
         <% if (user) { %>
-            <a href="" <%- title==='Add Destinations' ? 'class="active"' : '' %>>ADD DESTINATIONS</a>
+            <a href="/destinations/new" <%- title==='Add Destinations' ? 'class="active"' : '' %>>ADD DESTINATIONS</a>
+            <a href="/profiles/new" <%- title==='Profile' ? 'class="active"' : '' %>>Profile</a>
             <a href="/logout">LOG OUT</a>
             <% } else { %>
                 <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
             <% } %>
     </nav>
+    <main>
+        <h1>WHERE TO NEXT?</h1>
+<p>
+    Welcome to the 'Where To Next' blog, a diary of travel<br>
+    experiences in the palm of your hands. Share & explore <br>
+    new adventures with like-minded souls. 
+</p>
 
-</body>
 
-</html>
