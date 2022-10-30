@@ -32,7 +32,7 @@ function newProfile(req, res) {
     .exec(function(err, profiles){
     res.render('profiles/new', {
         title: 'Profile',
-        destinations
+        profiles
     });
     });
 }

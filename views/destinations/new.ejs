@@ -1,16 +1,16 @@
 <%= include('../partials/header') %>
 
+<h2>Destination</h2>
 <form id="new-form" action="/destinations" method="POST">
 <label>Location:</label>
 <input type="text" name="location">
 <label>Arrival:</label>
-<input type="text" name="arrival">
+<input type="date" name="arrival">
 <label>Depart</label>
 <input type="date" name="depart">
 <label>Description</label>
 <input type="text" name="description">
-<label for="Image"></label>
-<input type="image" name="image">
+<input type="submit" value="Add Trip">
 </form>
 
 

@@ -31,12 +31,12 @@ function show(req, res) {
 }
 
 function newDestination(req, res) {
-    res.render('destination/new', { title: 'Add Destination' });
+    res.render('destinations/new', { title: 'Add Destination' });
 }
 
 function create(req, res) {
     console.log(req.body);
-    const destination = new destination(req.body);
+    const destination = new Destination(req.body);
     destination.save(function(err) {
         if (err) return res.redirect('/destinations/new');
         console.log(destination);
