@@ -13,6 +13,6 @@ router.get('/new', ensureLoggedIn, destinationsCtrl.new);
 // GET /destinations/:id (display a "detail/show" page for a single destination)
 router.get('/:id', destinationsCtrl.show);
 // POST /destinations (handle the new form being submitted)
-
+router.post('/', ensureLoggedIn, destinationsCtrl.create);
 
 module.exports = router;
