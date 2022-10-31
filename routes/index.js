@@ -3,8 +3,8 @@ var router = express.Router();
 const passport = require('passport');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {title: 'WHERE TO NEXT ?' });
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'WHERE TO NEXT ?' });
 });
 
 
@@ -27,8 +27,8 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ));
 
-router.get('/logout', function(req, res) {
-  req.logout(function() {
+router.get('/logout', function (req, res) {
+  req.logout(function () {
     // Change path for your "landing" page
     res.redirect('/destinations');
   });

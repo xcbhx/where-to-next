@@ -1,29 +1,39 @@
 <%- include('../partials/header') %>
-<h2>Destinations</h2>
-<h3>Add Your Trips To The List</h3>
-<table>
-    <thead>
-        <tr>
-            <th>location</th>
-            <th>arrival</th>
-            <th>depart</th>
-            <th>description</th>
-            <th>image</th>
-        </tr>
-    </thead>
-    <tbody>
-        <%  destinations.forEach(function(d) {%>
-        <tr>
-            <td><%= d.location %></td>
-            <td><%= d.arrival %></td>
-            <td><%= d.depart %></td>
-            <td><%= d.description %></td>
-            <td><%= d.image %></td>
-            <td><a href="/destinations/<%= d._id %>">Add</a></td>
-        </tr>
-        <% }); %>
-    </tbody>
-</table>
+    <h2>Destinations</h2>
+    <h3>Add Your Trips To The List</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>location</th>
+                <th>arrival</th>
+                <th>depart</th>
+                <th>description</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% destinations.forEach(function(d) {%>
+                <tr>
+                    <td>
+                        <%= d.location %>
+                    </td>
+                    <td>
+                        <%= d.arrival %>
+                    </td>
+                    <td>
+                        <%= d.depart %>
+                    </td>
+                    <td>
+                        <%= d.description %>
+                    </td>
+                    <td>
+                        <%= d.image %>
+                    </td>
+                    <td><a href="/destinations/<%= d._id %>">Add</a></td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
 
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

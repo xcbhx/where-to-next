@@ -6,22 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title> <%= title %> </title>
+    <title>
+        <%= title %>
+    </title>
 </head>
 
 <body>
     <nav>
         <!-- <a href="">Welcome Page</a> -->
         <% if (user) { %>
-            <br><a href="/destinations/new" <%- title==='Add Destinations' ? 'class="active"' : '' %>>Add Destinations</a><br>
+            <br><a href="/destinations/new" <%- title==='Add Destinations' ? 'class="active"' : '' %>>Add
+                Destinations</a><br>
             <a href="/profiles/new" <%- title==='Profile' ? 'class="active"' : '' %>>Profile</a><br>
             <a href="/logout">Log Out</a>
             <% } else { %>
                 <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-            <% } %>
+                <% } %>
     </nav>
-    
-     
-
-
-
