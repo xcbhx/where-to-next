@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
     <h2>Destinations</h2>
-    <h3>Add Your Trips To The List</h3>
-    <table>
+    <h4>Add Your Trips To The List</h4>
+    <table id="add">
         <thead>
             <tr>
                 <th>location</th>
@@ -27,9 +27,8 @@
                         <%= d.description %>
                     </td>
                     <td>
-                        <%= d.image %>
+                       <img src="<%= d.image %>" alt=""> 
                     </td>
-                    <td><a href="/destinations/<%= d._id %>">Add</a></td>
                 </tr>
                 <% }); %>
         </tbody>

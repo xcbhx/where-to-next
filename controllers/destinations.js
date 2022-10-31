@@ -1,5 +1,5 @@
 const Destination = require('../models/destination');
-const Profile = require('..models/profile');
+
 
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function index(req, res) {
-    Destination.find({}, function (err, destinations) {
+    Destination.find({userId: req.user._id}, function (err, destinations) {
         res.render('destinations/index', { title: 'All Destinations', destinations });
     });
 }
@@ -35,9 +35,10 @@ function newDestination(req, res) {
 }
 
 function create(req, res) {
+    req.body.userId = req.user._id;
     const destination = new Destination(req.body);
     destination.save(function (err) {
         if (err) return res.redirect('/destinations/new');
-        res.redirect(`/destinations/${destination._id}`);
+        res.redirect('/destinations');
     });
 }

@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<section id="badge-container">
+    <% trips.forEach(function(t) { %>
+      <article class="badge"><%= t.location %></article>
+      <article class="badgeL"><%= t.description %></article>
+    <% }) %>
+  </section>
+
+
+<form id="add-trip-form" action="/trips" method="POST">
+    <label>Location:</label>
+    <input type="text" name="location">
+    <label>Description:</label>
+    <input type="text" name="description">
+    <input type="submit" value="Add Future Trip">
+  </form>
+
+
+<%- include('../partials/footer') %>
