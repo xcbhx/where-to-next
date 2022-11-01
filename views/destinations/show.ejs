@@ -21,7 +21,13 @@
     <div>
       <%= destination.image %>
     </div>
+    <form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
+      <label>Enter Update:</label>
+      <input name="description" value="<%= destination.destination %>">
+      <button type="submit">Update Destination</button>
+    </form>
   </section>
+
 
 
   <br><br>

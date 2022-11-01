@@ -14,5 +14,8 @@ router.get('/new', ensureLoggedIn, destinationsCtrl.new);
 router.get('/:id', destinationsCtrl.show);
 // POST /destinations (handle the new form being submitted)
 router.post('/', ensureLoggedIn, destinationsCtrl.create);
+// PUT /destinations/:id
+router.put('/:id', ensureLoggedIn, destinationsCtrl.update);
+
 
 module.exports = router;
