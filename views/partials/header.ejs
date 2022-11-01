@@ -13,8 +13,8 @@
 
 <body>
     <nav>
-        <!-- <a href="">Welcome Page</a> -->
         <% if (user) { %>
+            <a href="/destinations" <%- title === 'All Destinations' ? 'class="active"' : '' %>>All Destinations</a><br>
             <a href="/trips/new" <%- title==='Add Future Trips' ? 'class="active"' : '' %>>Add
                 Future Trips</a><br>
             <a href="/destinations/new" <%- title==='Add Destinations' ? 'class="active"' : '' %>>Add
@@ -24,4 +24,3 @@
                 <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
                 <% } %>
     </nav>
-    

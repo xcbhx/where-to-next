@@ -27,7 +27,7 @@
   <br><br>
   <h2>Reviews</h2>
   <% if (user) { %>
-    <form id="add-review-form" method="POST" action="/destintations/<%= destination._id %>/reviews">
+    <form id="add-review-form" method="POST" action="/destinations/<%= destination._id %>/reviews">
       <label>Review:</label>
       <textarea name="content"></textarea>
       <label>Rating:</label>
@@ -93,6 +93,5 @@
           <h5>No Reviews Yet</h5>
           <% } %>
 
-            <!-- <a href="/destinations/<%= destination._id %>/profiles/new">Preview Added Trips</a> -->
 
             <%- include('../partials/footer') %>

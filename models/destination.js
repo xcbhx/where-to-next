@@ -13,10 +13,9 @@ const reviewSchema = new Schema({
     max: 5,
     default: 5
   },
-  userId: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true
   },
   userName: String,
   userAvatar: String
@@ -44,7 +43,6 @@ const destinationSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true
   },
   reviews: [reviewSchema]
 }, {

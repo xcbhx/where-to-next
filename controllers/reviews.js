@@ -25,11 +25,12 @@ function create(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-
+  console.log(destination, req.body);
     destination.reviews.push(req.body);
-    destination.save(function (err) {
+    destination.save(function (err, destination) {
       // Step 5: Respond with a redirect because we've mutated data
-      res.redirect(`/destinations/${destination._id}`);
+      console.log('create', err);
+      res.redirect(`/destinations/${req.params.id}`);
     });
   });
 }

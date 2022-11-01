@@ -10,24 +10,20 @@ module.exports = {
 };
 
 function index(req, res) {
-    Destination.find({userId: req.user._id}, function (err, destinations) {
+    Destination.find({ userId: req.user._id }, function (err, destinations) {
         res.render('destinations/index', { title: 'All Destinations', destinations });
     });
 }
 
 function show(req, res) {
-    Destination.findById(req.params.id),
-        function (err, destination) {
-            Destination.find({ destination: destination._id },
-                function (err, profiles) {
-                    console.log(profiles);
-                    res.render('destinations/show', {
-                        title: 'Destinations Page',
-                        destination,
-                        profiles
-                    });
-                });
-        }
+    console.log('show', req.params.id);
+    Destination.findById(req.params.id, function (err, destination) {
+        console.log(destination, err);
+        res.render('destinations/show', {
+            title: 'Destinations Page',
+            destination,
+        });
+    });
 }
 
 function newDestination(req, res) {
