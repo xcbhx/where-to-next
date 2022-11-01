@@ -24,8 +24,8 @@ require('./config/database');
 
 /*--- Require the app's Mongoose models ---*/
 const Destination = require('./models/destination');
-const Profile = require('./models/profile');
+const Trip = require('./models/trip');
 
 /*--- Define Variables to Hold Documents ---*/
 let destination, destinations;
-let profile, profiles;
+let trip, trips;

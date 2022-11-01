@@ -2,7 +2,7 @@ body {
   padding: 30px;
   font: "Lucida Grande", Helvetica, Arial, sans-serif;
   /* font-size: larger; */
-  background-color: rgb(216, 236, 242);
+  background-color: rgb(239, 251, 255);
 }
 
 a {
@@ -11,9 +11,10 @@ a {
 
 h1 {
   font-size: 100px;
-  background: url('/images/beautifulBeachInPortugal.jpeg') no-repeat;
+  background: url('/images/WHERETONEXTIMG.jpeg') no-repeat;
   background-position: center center;
-  /* background-position-y: -100px; */
+  background-position-y: -100px;
+  /* background-position-x: -50px; */
   background-color: #072f3f;
   background-size: cover;
   background-clip: text;
@@ -46,5 +47,9 @@ p {
 }
 
 .to {
+  text-align: center;
+}
+
+.next {
   text-align: center;
 }
