@@ -1,20 +1,21 @@
 <%- include('../partials/header') %>
 
+<h2 class="futureTrip">Add Future Trips</h2>
+<br><br>
+<form id="add-trip-form" action="/trips" method="POST">
+  <label>Location:</label>
+  <input required type="text" name="location">
+  <label>Description:</label>
+  <input required type="text" name="description">
+  <input type="submit" value="Add Future Trip">
+</form><br> <br>
+
 <section id="badge-container">
     <% trips.forEach(function(t) { %>
       <article class="badge"><%= t.location %></article>
       <article class="badgeL"><%= t.description %></article>
     <% }) %>
   </section>
-
-
-<form id="add-trip-form" action="/trips" method="POST">
-    <label>Location:</label>
-    <input type="text" name="location">
-    <label>Description:</label>
-    <input type="text" name="description">
-    <input type="submit" value="Add Future Trip">
-  </form>
 
 
 <%- include('../partials/footer') %>

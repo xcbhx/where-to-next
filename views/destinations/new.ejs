@@ -3,16 +3,16 @@
     <h2>Add Destinations</h2>
     <form id="new-form" action="/destinations" method="POST">
         <label>Location:</label>
-        <input type="text" name="location">
+        <input required type="text" name="location"><br>
         <label>Arrival:</label>
-        <input type="date" name="arrival">
+        <input required type="date" name="arrival"><br>
         <label>Depart:</label>
-        <input type="date" name="depart">
+        <input required type="date" name="depart"><br>
         <label>Description:</label>
-        <input type="text" name="description">
+        <input required type="text" name="description"><br>
         <label>Image:</label>
-        <input type="text" name="image">
-        <input type="submit" value="Add Trip">
+        <input required type="text" name="image">
+        <input type="submit" value="Add Trip"><br>
     </form>
 
 
