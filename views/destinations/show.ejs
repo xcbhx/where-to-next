@@ -20,12 +20,17 @@
     <div>Image: </div>
     <div>
       <%= destination.image %>
-    </div>
+    </div><br>
     <form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
-      <label>Enter Update:</label>
+      <label class="enterUpdate">Enter Update:</label>
       <input name="description" value="<%= destination.destination %>">
-      <button type="submit">Update Destination</button>
+      <button type="submit">Update Description</button>
     </form>
+    <form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
+      <input name="arrival" value="<%= destination.destination %>" required type="date">
+      <input name="depart" value="<%= destination.destination %>" required type="date">
+      <button type="submit">Update Dates</button>
+    </form><br>
     <form action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete Destination</button>
     </form>
@@ -34,7 +39,7 @@
 
 
   <br><br>
-  <h2>Reviews</h2>
+  <h2 class="reviews">Reviews</h2>
   <% if (user) { %>
     <form id="add-review-form" method="POST" action="/destinations/<%= destination._id %>/reviews">
       <label>Review:</label>

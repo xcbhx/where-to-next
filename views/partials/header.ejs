@@ -13,6 +13,7 @@
 
 <body>
     <nav>
+        <div id="navBar">
         <% if (user) { %>
             <a href="/destinations" <%- title === 'All Destinations' ? 'class="active"' : '' %>>All Destinations</a><br>
             <a href="/destinations/new" <%- title==='Add Destinations' ? 'class="active"' : '' %>>Add
@@ -21,4 +22,5 @@
             <% } else { %>
                 <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
                 <% } %>
+            </div>
     </nav>
