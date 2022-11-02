@@ -5,7 +5,8 @@ module.exports = {
     new: newTrip,
     create,
     addToTrip,
-    delete: deleteTrip
+    delete: deleteTrip,
+    update
 };
 
 function deleteTrip(req, res, next) {
@@ -54,3 +55,14 @@ function newTrip(req, res) {
         });
 }
 
+function update(req, res) {
+    Trip.findOneAndUpdate(
+        {_id: req.params.id, userRecommending: req.user._id},
+        req.body,
+        {new: true},
+        function(err, trip) {
+            if (err || !trip) return res.redirect('/trips');
+            res.redirect(`/trips/${req.params.id}`);
+        }
+    );
+}

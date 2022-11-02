@@ -11,8 +11,10 @@ router.get('/trips/new', ensureLoggedIn, tripsCtrl.new);
 router.post('/trips', ensureLoggedIn, tripsCtrl.create);
 // POST /destinations/:id/trips (assoc destination & trip)
 router.post('/destinations/:id/trips', ensureLoggedIn, tripsCtrl.addToTrip);
-// DELETE /reviews/:id
+// DELETE /trips/:id
 router.delete('/trips/:id', ensureLoggedIn, tripsCtrl.delete);
+// PUT /trips/:id
+router.put('/:id', ensureLoggedIn, tripsCtrl.update);
 
 
 module.exports = router;

@@ -26,6 +26,9 @@
       <input name="description" value="<%= destination.destination %>">
       <button type="submit">Update Destination</button>
     </form>
+    <form action="/destinations/<%= destination._id %>/destinations" method="DELETE">
+      <button type="submit">Delete Destination</button>
+    </form>
   </section>
 
 

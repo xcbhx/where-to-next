@@ -16,6 +16,8 @@ router.get('/:id', destinationsCtrl.show);
 router.post('/', ensureLoggedIn, destinationsCtrl.create);
 // PUT /destinations/:id
 router.put('/:id', ensureLoggedIn, destinationsCtrl.update);
+//DELETE /destinations/:id
+router.delete('/:id', ensureLoggedIn, destinationsCtrl.delete);
 
 
 module.exports = router;

@@ -7,7 +7,8 @@ module.exports = {
     show,
     new: newDestination,
     create,
-    update
+    update,
+    delete: deleteDestination
 };
 
 function index(req, res) {
@@ -48,6 +49,14 @@ function update(req, res) {
         function(err, destination) {
             if (err || !destination) return res.redirect('/destinations');
             res.redirect(`/destinations/${destination._id}`);
+        }
+    );
+}
+
+function deleteDestination(req, res) {
+    Destination.findOneAndDelete(
+        {_id: req.params.Id, userRecommending: req.user._id}, function(err) {
+        res.redirect('/destinations');
         }
     );
 }

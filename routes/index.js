@@ -30,7 +30,7 @@ router.get('/oauth2callback', passport.authenticate(
 router.get('/logout', function (req, res) {
   req.logout(function () {
     // Change path for your "landing" page
-    res.redirect('/destinations');
+    res.redirect('/index');
   });
 });
 

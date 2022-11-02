@@ -5,7 +5,7 @@
 <% if (user) { %>
     <form id="edit-review" method="POST" action="/reviews/<%= review._id %>?_method=PUT">
       <label>Review:</label>
-      <textarea name="content" value="<%= review.content %>"></textarea>
+      <textarea name="content" value="<%= review.content %>" maxlength="150"></textarea>
       <label>Rating:</label>
       <select name="rating">
         <option value="1">1</option>
