@@ -12,7 +12,7 @@ module.exports = {
 };
 
 function index(req, res) {
-    Destination.find({ userId: req.user._id }, function (err, destinations) {
+    Destination.find({ user: req.user._id }, function (err, destinations) {
         res.render('destinations/index', { title: 'All Destinations', destinations });
     });
 }
@@ -33,7 +33,7 @@ function newDestination(req, res) {
 }
 
 function create(req, res) {
-    req.body.userId = req.user._id;
+    req.body.user = req.user._id;
     const destination = new Destination(req.body);
     destination.save(function (err) {
         if (err) return res.redirect('/destinations/new');
@@ -55,7 +55,7 @@ function update(req, res) {
 
 function deleteDestination(req, res) {
     Destination.findOneAndDelete(
-        {_id: req.params.Id, userRecommending: req.user._id}, function(err) {
+        {_id: req.params.id, user: req.user._id}, function(err) {
         res.redirect('/destinations');
         }
     );

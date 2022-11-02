@@ -26,7 +26,7 @@
       <input name="description" value="<%= destination.destination %>">
       <button type="submit">Update Destination</button>
     </form>
-    <form action="/destinations/<%= destination._id %>/destinations" method="DELETE">
+    <form action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete Destination</button>
     </form>
   </section>
@@ -80,7 +80,7 @@
                       <%= r.rating %>
                     </td>
                     <td>
-                      <% if (user?._id.equals(r.userId)) { %>
+                      <% if (user?._id.equals(r.user)) { %>
                         <form action="/reviews/<%= r._id %>/edit">
                           <button type="submit">Edit</button>
                         </form>

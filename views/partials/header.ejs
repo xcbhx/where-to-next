@@ -15,8 +15,6 @@
     <nav>
         <% if (user) { %>
             <a href="/destinations" <%- title === 'All Destinations' ? 'class="active"' : '' %>>All Destinations</a><br>
-            <a href="/trips/new" <%- title==='Add Future Trips' ? 'class="active"' : '' %>>Add
-                Future Trips</a><br>
             <a href="/destinations/new" <%- title==='Add Destinations' ? 'class="active"' : '' %>>Add
                 Destinations</a><br>
             <a href="/logout">Log Out</a>
