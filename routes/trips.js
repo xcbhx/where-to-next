@@ -11,5 +11,8 @@ router.get('/trips/new', ensureLoggedIn, tripsCtrl.new);
 router.post('/trips', ensureLoggedIn, tripsCtrl.create);
 // POST /destinations/:id/trips (assoc destination & trip)
 router.post('/destinations/:id/trips', ensureLoggedIn, tripsCtrl.addToTrip);
+// DELETE /reviews/:id
+router.delete('/trips/:id', ensureLoggedIn, tripsCtrl.delete);
+
 
 module.exports = router;

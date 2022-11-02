@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<h3>Edit Review Below</h3>
+
+<% if (user) { %>
+    <form id="edit-review" method="POST" action="/reviews/<%= review._id %>?_method=PUT">
+      <label>Review:</label>
+      <textarea name="content" value="<%= review.content %>"></textarea>
+      <label>Rating:</label>
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
+      <input type="submit" value="Add Edit Review">
+    </form>
+    <% } %>
+
+<%- include('../partials/footer') %>

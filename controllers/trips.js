@@ -4,8 +4,26 @@ const Trip = require('../models/trip');
 module.exports = {
     new: newTrip,
     create,
-    addToTrip
-}
+    addToTrip,
+    delete: deleteTrip
+};
+
+function deleteTrip(req, res, next) {
+    Destination.findOne({
+      'reviews._id': req.params.id,
+      'reviews.user': req.user._id
+    }).then(function (destination) {
+      if (!destination) return res.redirect('/destinations');
+      destination.trips.remove(req.params.id);
+      destination.save().then(function () {
+        res.redirect(`/destinations/${destination._id}`);
+      }).catch(function (err) {
+        return next(err);
+      });
+    });
+  }
+
+
 
 function addToTrip(req, res) {
     Destination.findById(req.params.id, function (err, destination) {
@@ -35,3 +53,4 @@ function newTrip(req, res) {
             });
         });
 }
+

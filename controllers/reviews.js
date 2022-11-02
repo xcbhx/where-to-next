@@ -1,8 +1,11 @@
 const Destination = require('../models/destination');
 
+
 module.exports = {
   create,
-  delete: deleteReview
+  delete: deleteReview,
+  edit,
+  update
 };
 
 function deleteReview(req, res, next) {
@@ -22,15 +25,32 @@ function deleteReview(req, res, next) {
 
 function create(req, res) {
   Destination.findById(req.params.id, function (err, destination) {
-    req.body.user = req.user._id;
+    req.body.userId = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-  console.log(destination, req.body);
     destination.reviews.push(req.body);
-    destination.save(function (err, destination) {
+    destination.save(function (err) {
       // Step 5: Respond with a redirect because we've mutated data
-      console.log('create', err);
-      res.redirect(`/destinations/${req.params.id}`);
+      res.redirect(`/destinations/${destination._id}`);
+    });
+  });
+}
+
+
+function edit(req, res) {
+  Destination.findOne({'reviews._id': req.params.id}, function(err, destination) {
+    const review = destination.reviews.id(req.params.id);
+    res.render('reviews/edit', {review, title: 'Edit Page'});
+  });
+}
+
+function update(req, res) {
+  Destination.findOne({'reviews._id': req.params.id}, function(err, destination) {
+    const reviewSubdoc = destination.reviews.id(req.params.id);
+    if (!reviewSubdoc.userId.equals(req.user._id)) return res.redirect('/reviews/edit');
+    reviewSubdoc.content = req.body.content;
+    destination.save(function(err) {
+      res.redirect(`/destinations/${destination._id}`);
     });
   });
 }
