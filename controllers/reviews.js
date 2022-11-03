@@ -41,7 +41,7 @@ function create(req, res) {
 function edit(req, res) {
   Destination.findOne({'reviews._id': req.params.id}, function(err, destination) {
     const review = destination.reviews.id(req.params.id);
-    res.render('reviews/edit', {review, title: 'Edit Page'});
+    res.render('reviews/edit', {review, title: 'Edit Review Below'});
   });
 }
 

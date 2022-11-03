@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h3>Edit Review Below</h3>
+<h3 id="editReview"><%= title %></h3>
 
 <% if (user) { %>
     <form id="edit-review" method="POST" action="/reviews/<%= review._id %>?_method=PUT">

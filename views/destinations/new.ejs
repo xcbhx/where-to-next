@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
 
-    <h2>Add Destinations</h2>
-    <form id="new-form" action="/destinations" method="POST">
-        <label>Location:</label>
-        <input required type="text" name="location"><br>
-        <label>Arrival:</label>
-        <input required type="date" name="arrival"><br>
-        <label>Depart:</label>
-        <input required type="date" name="depart"><br>
-        <label>Description:</label>
-        <input required type="text" name="description" maxlength="150"><br>
-        <label>Image:</label>
-        <input required type="text" name="image">
+    <h2 class="addD">Add Destinations</h2>
+    <form action="/destinations" method="POST">
+        <label class="newPage">Location:</label>
+        <input class="newPage" required type="text" name="location"><br><br>
+        <label class="newPage">Arrival:</label>
+        <input class="newPage" required type="date" name="arrival"><br><br>
+        <label class="newPage">Depart:</label>
+        <input class="newPage" required type="date" name="depart"><br><br>
+        <label class="newPage">Description:</label>
+        <input class="newPage" required type="text" name="description" maxlength="150"><br><br>
+        <label class="newPage">Image:</label>
+        <input class="newPage" required type="text" name="image">
         <input type="submit" value="Add Trip"><br>
     </form>
 

@@ -1,23 +1,23 @@
 <%- include('../partials/header') %>
 
   <section id="show-page">
-    <div>Location: </div>
+    <div class="show-bold">Location: </div>
     <div>
       <%= destination.location %>
     </div>
-    <div>Arrival: </div>
+    <div class="show-bold">Arrival: </div>
     <div>
       <%= destination.arrival %>
-    </div>
-    <div>Depart: </div>
+    </div class="show-bold">
+    <div class="show-bold">Depart: </div>
     <div>
       <%= destination.depart %>
     </div>
-    <div>Description: </div>
+    <div class="show-bold">Description: </div>
     <div>
       <%= destination.description %>
     </div>
-    <div>Image: </div>
+    <div class="show-bold">Image: </div>
     <div>
       <%= destination.image %>
     </div><br>
@@ -90,7 +90,7 @@
                           <button type="submit">Edit</button>
                         </form>
                         <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                          <button type="submit">Delete</button>
+                          <button type="submit">&#x1F5D1;</button>
                         </form>
                         <% } %>
                     </td>
