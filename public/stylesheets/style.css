@@ -78,7 +78,7 @@ p {
 }
 
 .image {
-  max-width: 400px;
+  max-width: 20vw;
 }
 
 .tripList {
@@ -88,6 +88,8 @@ p {
 .destinations {
   font-size: 35px;
   color: maroon;
+  display: flex;
+  justify-content: center;
 }
 
 .addD {
@@ -102,4 +104,14 @@ p {
 
 #editReview {
   color: maroon;
+}
+
+.dpage {
+  color:rgb(193, 47, 50);
+}
+
+.dLaDd {
+  color: rgb(93, 69, 23);
+  padding: .5rem;
+  font-size: 1.5vw;
 }

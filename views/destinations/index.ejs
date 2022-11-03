@@ -1,36 +1,36 @@
 <%- include('../partials/header') %>
     <h2 class="destinations">Destinations</h2>
     <h4 class="tripList">Add Your Trips To The List</h4>
-    <table id="add">
+    <table>
         <thead>
             <tr>
-                <th>Location</th>
-                <th>Arrival</th>
-                <th>Depart</th>
-                <th>Description</th>
-                <th>Image</th>
+                <th class="dpage">Location</th>
+                <th class="dpage">Arrival</th>
+                <th class="dpage">Depart</th>
+                <th class="dpage">Description</th>
+                <th class="dpage">Image</th>
             </tr>
         </thead>
         <tbody>
             <% destinations.forEach(function(d) {%>
                 <tr>
-                    <td class="location">
+                    <td class="dLaDd">
                         <%= d.location %>
                     </td>
-                    <td>
+                    <td class="dLaDd">
                         <%= d.arrival %>
                     </td>
-                    <td>
+                    <td class="dLaDd">
                         <%= d.depart %>
                     </td>
-                    <td>
+                    <td class="dLaDd">
                         <%= d.description %>
                     </td>
-                    <td>
-                       <a href="/destinations/<%= d._id %>">Details</a>
+                    <td class="dLaDd">
+                        <img class="image" src="<%= d.image %>" alt=""> 
                     </td>
                     <td>
-                       <img class="image" src="<%= d.image %>" alt=""> 
+                        <a href="/destinations/<%= d._id %>">Details</a>
                     </td>
                 </tr>
                 <% }); %>
