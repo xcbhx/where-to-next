@@ -1,5 +1,132 @@
 <%- include('../partials/header') %>
+  <section id="show-page">
 
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="dpage" scope="col">Location</th>
+          <th class="dpage" scope="col">Arrival</th>
+          <th class="dpage" scope="col">Depart</th>
+          <th class="dpage" scope="col">Description</th>
+          <th class="dpage" scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>
+            <%= destination.location %>
+          </td>
+          <td>
+            <%= destination.arrival %>
+          </td>
+          <td>
+            <%= destination.depart %>
+          </td>
+          <td>
+            <%= destination.description %>
+          </td>
+          <td> <img class="image" src="<%= destination.image %>" alt=""> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
+      <label class="enterUpdate">Enter Update:</label>
+      <input name="description" value="<%= destination.destination %>">
+      <button type="submit">Update Description</button>
+    </form>
+    <form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
+      <input name="arrival" value="<%= destination.destination %>" required type="date">
+      <input name="depart" value="<%= destination.destination %>" required type="date">
+      <button type="submit">Update Dates</button>
+    </form><br>
+    <form action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Destination</button>
+    </form>
+  </section>
+
+
+
+
+  <h2 class="reviews">Reviews</h2>
+  <% if (user) { %>
+    <form id="add-review-form" method="POST" action="/destinations/<%= destination._id %>/reviews">
+      <label>Review:</label>
+      <textarea name="content"></textarea>
+      <label>Rating:</label>
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
+      <input type="submit" value="Add Review">
+    </form>
+    <% } %>
+
+      <% if (destination.reviews.length) { %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">User</th>
+              <th scope="col">Date</th>
+              <th scope="col">Review</th>
+              <th scope="col">Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let total=0 %>
+              <% destination.reviews.forEach(function(r) { %>
+                <% total +=r.rating %>
+                  <tr>
+                    <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer">
+                      <%= r.userName %>
+                    </td>
+                    <td>
+                      <%= r.createdAt.toLocaleDateString() %>
+                    </td>
+                    <td>
+                      <%= r.content %>
+                    </td>
+                    <td>
+                      <%= r.rating %>
+                    </td>
+                    <td>
+                      <% if (user?._id.equals(r.user)) { %>
+                        <form action="/reviews/<%= r._id %>/edit">
+                          <button type="submit">Edit</button>
+                        </form>
+                        <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                          <button type="submit">&#x1F5D1;</button><br>
+                        </form>
+                        <% } %>
+                    </td>
+                  </tr>
+                  <% }); %>
+                    <tr>
+                      <td colspan="2">
+                        Overall Rating:
+                      </td>
+                      <td>
+                        <strong>
+                          <%= (total / destination.reviews.length).toFixed(1) %>
+                        </strong>
+                      </td>
+                    </tr>
+          </tbody>
+        </table>
+        <% } else { %>
+          <h5>No Reviews Yet</h5>
+          <% } %>
+
+
+
+
+
+
+            <!-- 
   <section id="show-page">
     <div class="show-bold">Location: </div>
     <div>
@@ -108,7 +235,7 @@
         </table>
         <% } else { %>
           <h5>No Reviews Yet</h5>
-          <% } %>
+          <% } %> -->
 
 
             <%- include('../partials/footer') %>

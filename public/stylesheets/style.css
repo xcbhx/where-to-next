@@ -59,6 +59,12 @@ p {
   text-align: center;
 }
 
+.border {
+  margin: 2vmin;
+  padding: 2vmin;
+  border: solid 1vmin grey;
+}
+
 .reviews {
   background-color: #305b6c;
   color: rgb(255, 253, 253);
@@ -81,10 +87,6 @@ p {
   max-width: 20vw;
 }
 
-.tripList {
- color:rgb(6, 43, 44); 
-}
-
 .destinations {
   font-size: 35px;
   color: maroon;
@@ -95,11 +97,15 @@ p {
 .addD {
   font-size: 35px;
   color: maroon;
+  display: flex;
+  justify-content: center;
 }
 
 .newPage {
   font-size: 20px;
   margin: 2px;
+  /* display: flex;
+  justify-content: center; */
 }
 
 #editReview {
@@ -107,11 +113,17 @@ p {
 }
 
 .dpage {
-  color:rgb(193, 47, 50);
+  color:rgb(47, 3, 4);
 }
-
+/* 
 .dLaDd {
   color: rgb(93, 69, 23);
   padding: .5rem;
   font-size: 1.5vw;
+} */
+
+article {
+  margin: 2vmin;
+  padding: 2vmin;
+  border: solid 1vmin grey;
 }
