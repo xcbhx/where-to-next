@@ -18,7 +18,7 @@ CSS<br>
 NodeJS<br>
 ExpressJS<br>
 MongoDB<br>
-MongooseJS<br>
+Mongoose<br>
 
 
 ## **Getting Started:** <br>
