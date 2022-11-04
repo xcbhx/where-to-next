@@ -4,9 +4,9 @@
 
 <% if (user) { %>
     <form id="edit-review" method="POST" action="/reviews/<%= review._id %>?_method=PUT">
-      <label>Review:</label>
+      <label class="reviewRating">Review:</label>
       <textarea name="content" value="<%= review.content %>" maxlength="150"></textarea>
-      <label>Rating:</label>
+      <label class="reviewRating">Rating:</label>
       <select name="rating">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -14,7 +14,7 @@
         <option value="4">4</option>
         <option value="5" selected>5</option>
       </select>
-      <input type="submit" value="Add Edit Review">
+      <input class="addEReview" type="submit" value="Add Edit Review">
     </form>
     <% } %>
 

@@ -27,48 +27,5 @@
 
 
 
-    <!-- <table>
-        <thead>
-            <tr>
-                <th class="dpage">Location</th>
-                <th class="dpage">Arrival</th>
-                <th class="dpage">Depart</th>
-                <th class="dpage">Description</th>
-                <th class="dpage">Image</th>
-            </tr>
-        </thead>
-        <tbody>
-            <section>
-            <% destinations.forEach(function(d) {%>
-                <article>
-                <tr class="border">
-                    
-                    <td class="dLaDd">
-                        <%= d.location %>
-                    </td>
-                    <td class="dLaDd">
-                        <%= d.arrival %>
-                    </td>
-                    <td class="dLaDd">
-                        <%= d.depart %>
-                    </td>
-                    <td class="dLaDd">
-                        <%= d.description %>
-                    </td>
-                    <td class="dLaDd">
-                        <img class="image" src="<%= d.image %>" alt=""> 
-                    </td>
-                    <td>
-                        <a href="/destinations/<%= d._id %>">Details</a>
-                    </td>
-                
-                </tr>
-            </article>
-                <% }); %>
-            </section>
-        </tbody>
-    </table> -->
-
-
 
     <%- include('../partials/footer') %>

@@ -1,12 +1,7 @@
 body {
   padding: 30px;
   font: "Lucida Grande", Helvetica, Arial, sans-serif;
-  /* font-size: larger; */
   background-color: rgb(239, 251, 255);
-}
-
-a {
-  color: #04222d;
 }
 
 h1 {
@@ -26,7 +21,6 @@ p {
   font-size: 40px;
   display: flex;
   justify-content: center;
-
 }
 
 .login {
@@ -57,12 +51,6 @@ p {
 
 .next {
   text-align: center;
-}
-
-.border {
-  margin: 2vmin;
-  padding: 2vmin;
-  border: solid 1vmin grey;
 }
 
 .reviews {
@@ -101,10 +89,13 @@ p {
 .newPage {
   font-size: 20px;
   margin: 2px;
+  color:rgb(93, 69, 23);
 }
 
 #editReview {
   color: maroon;
+  display: flex;
+  justify-content: center;
 }
 
 .dpage {
@@ -120,15 +111,29 @@ p {
   font-style: oblique;
 }
 
-article {
-  margin: 2vmin;
-  padding: 2vmin;
-  border: solid 1vmin grey;
+.review-user {
+  color: rgb(93, 69, 23);
+  padding: .5rem;
+  font-size: 1.5vw;
+  font-style: oblique;
+}
+
+.rNames {
+  font-size: 20px;
+}
+
+#edit-review {
+  margin: 10rem;
+  display: flex;
+  justify-content: center;
+}
+
+.reviewRating {
+  color:rgb(93, 69, 23);
+  margin: 15px;
 }
 
 
-
-
-
-
-
+.addEReview {
+  margin: 20px;
+}
