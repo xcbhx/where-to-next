@@ -14,10 +14,10 @@
         <tbody>
             <% destinations.forEach(function(d) {%>
           <tr>
-            <td><%= d.location %></td>
-            <td><%= d.arrival %></td>
-            <td> <%= d.depart %></td>
-            <td> <%= d.description %></td>
+            <td class="dLaDd"><%= d.location %></td>
+            <td class="dLaDd"><%= d.arrival %></td>
+            <td class="dLaDd"> <%= d.depart %></td>
+            <td class="dLaDd"> <%= d.description %></td>
             <td> <img class="image" src="<%= d.image %>" alt=""> </td>
             <td> <a href="/destinations/<%= d._id %>">Details</a></td>
           </tr>

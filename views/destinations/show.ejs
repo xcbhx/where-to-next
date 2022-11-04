@@ -14,16 +14,16 @@
       <tbody>
 
         <tr>
-          <td>
+          <td class="dLaDd">
             <%= destination.location %>
           </td>
-          <td>
+          <td class="dLaDd">
             <%= destination.arrival %>
           </td>
-          <td>
+          <td class="dLaDd">
             <%= destination.depart %>
           </td>
-          <td>
+          <td class="dLaDd">
             <%= destination.description %>
           </td>
           <td> <img class="image" src="<%= destination.image %>" alt=""> </td>
@@ -39,10 +39,10 @@
     <form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
       <input name="arrival" value="<%= destination.destination %>" required type="date">
       <input name="depart" value="<%= destination.destination %>" required type="date">
-      <button type="submit">Update Dates</button>
+      <button id="updateDates" type="submit">Update Dates</button>
     </form><br>
     <form action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete Destination</button>
+      <button id="deleteBtn" type="submit">Delete Destination</button>
     </form>
   </section>
 
