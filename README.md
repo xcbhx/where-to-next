@@ -22,6 +22,8 @@ MongooseJS<br>
 
 
 ## **Getting Started:** <br>
+*Click on the link below to view Trello!*<br>
+(https://trello.com/b/xM2zD65w/where-to-next)<br>
 *Click on the link below to play!* <br>
 (https://where-to-next-blog.herokuapp.com/)
 
@@ -30,4 +32,5 @@ MongooseJS<br>
 <li>Add a drop-down menu for the navigation bar.</li> 
 <li>Incorporate an API that allows the Users to pick which country and/or state they are posting from a drop-down menu.</li>
 <li>Add a feature that allows the User to change the blog's background color.</li>
+<li>Add a search function.</li>
 </ul>

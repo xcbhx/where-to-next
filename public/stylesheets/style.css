@@ -72,7 +72,7 @@ p {
 
 .show-bold {
   font-weight: bold;
-  color:rgb(8, 53, 55);
+  color: rgb(8, 53, 55);
 }
 
 .image {
@@ -89,7 +89,7 @@ p {
 .newPage {
   font-size: 20px;
   margin: 2px;
-  color:rgb(93, 69, 23);
+  color: rgb(93, 69, 23);
 }
 
 #editReview {
@@ -99,7 +99,7 @@ p {
 }
 
 .dpage {
-  color:rgb(47, 3, 4);
+  color: rgb(47, 3, 4);
   font-size: 20px;
   font-style: italic;
 }
@@ -129,7 +129,7 @@ p {
 }
 
 .reviewRating {
-  color:rgb(93, 69, 23);
+  color: rgb(93, 69, 23);
   margin: 15px;
 }
 

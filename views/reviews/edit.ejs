@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
 
-<h3 id="editReview"><%= title %></h3>
+  <h3 id="editReview">
+    <%= title %>
+  </h3>
 
-<% if (user) { %>
+  <% if (user) { %>
     <form id="edit-review" method="POST" action="/reviews/<%= review._id %>?_method=PUT">
       <label class="reviewRating">Review:</label>
       <textarea name="content" value="<%= review.content %>" maxlength="150"></textarea>
@@ -18,4 +20,4 @@
     </form>
     <% } %>
 
-<%- include('../partials/footer') %>
+      <%- include('../partials/footer') %>

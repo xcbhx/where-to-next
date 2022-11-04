@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
   <section id="show-page">
-
     <table class="table">
       <thead>
         <tr>
@@ -12,7 +11,6 @@
         </tr>
       </thead>
       <tbody>
-
         <tr>
           <td class="dLaDd">
             <%= destination.location %>
@@ -30,7 +28,6 @@
         </tr>
       </tbody>
     </table>
-
     <form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
       <label class="enterUpdate">Enter Update:</label>
       <input name="description" value="<%= destination.destination %>">
@@ -120,10 +117,6 @@
         <% } else { %>
           <h5>No Reviews Yet</h5>
           <% } %>
-
-
-
-
 
 
             <%- include('../partials/footer') %>

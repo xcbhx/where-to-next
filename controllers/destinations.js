@@ -18,9 +18,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-    console.log('show', req.params.id);
     Destination.findById(req.params.id, function (err, destination) {
-        console.log(destination, err);
         res.render('destinations/show', {
             title: 'Destinations Page',
             destination,
@@ -43,10 +41,10 @@ function create(req, res) {
 
 function update(req, res) {
     Destination.findOneAndUpdate(
-        {_id: req.params.id, userRecommending: req.user._id},
+        { _id: req.params.id, userRecommending: req.user._id },
         req.body,
-        {new: true},
-        function(err, destination) {
+        { new: true },
+        function (err, destination) {
             if (err || !destination) return res.redirect('/destinations');
             res.redirect(`/destinations/${destination._id}`);
         }
@@ -55,8 +53,8 @@ function update(req, res) {
 
 function deleteDestination(req, res) {
     Destination.findOneAndDelete(
-        {_id: req.params.id, user: req.user._id}, function(err) {
-        res.redirect('/destinations');
+        { _id: req.params.id, user: req.user._id }, function (err) {
+            res.redirect('/destinations');
         }
     );
 }

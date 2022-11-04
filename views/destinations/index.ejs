@@ -1,31 +1,39 @@
 <%- include('../partials/header') %>
-    <h2 class="destinations">Destinations</h2>
+  <h2 class="destinations">Destinations</h2>
 
-    <table class="table">
-        <thead>
-          <tr>
-            <th class="dpage" scope="col">Location</th>
-            <th class="dpage" scope="col">Arrival</th>
-            <th class="dpage" scope="col">Depart</th>
-            <th class="dpage" scope="col">Description</th>
-            <th class="dpage" scope="col">Image</th>
-          </tr>
-        </thead>
-        <tbody>
-            <% destinations.forEach(function(d) {%>
-          <tr>
-            <td class="dLaDd"><%= d.location %></td>
-            <td class="dLaDd"><%= d.arrival %></td>
-            <td class="dLaDd"> <%= d.depart %></td>
-            <td class="dLaDd"> <%= d.description %></td>
-            <td> <img class="image" src="<%= d.image %>" alt=""> </td>
-            <td> <a href="/destinations/<%= d._id %>">Details</a></td>
-          </tr>
-          <% }); %>
-        </tbody>
-      </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="dpage" scope="col">Location</th>
+        <th class="dpage" scope="col">Arrival</th>
+        <th class="dpage" scope="col">Depart</th>
+        <th class="dpage" scope="col">Description</th>
+        <th class="dpage" scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% destinations.forEach(function(d) {%>
+        <tr>
+          <td class="dLaDd">
+            <%= d.location %>
+          </td>
+          <td class="dLaDd">
+            <%= d.arrival %>
+          </td>
+          <td class="dLaDd">
+            <%= d.depart %>
+          </td>
+          <td class="dLaDd">
+            <%= d.description %>
+          </td>
+          <td> <img class="image" src="<%= d.image %>" alt=""> </td>
+          <td> <a href="/destinations/<%= d._id %>">Details</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
 
 
 
 
-    <%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>
