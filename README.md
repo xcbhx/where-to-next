@@ -1,7 +1,7 @@
 
 # Where To Next?
 
-## *Where To Next is a blog site that allows users to create traveling posting that is shared with other viewers.* 
+## *Where To Next is a dynamic blog site that empowers users to craft captivating travel posts, sharing their adventures and experiences with a global community of fellow travelers and enthusiastic readers. Join us in exploring the world, one story at a time.* 
 <br>
 
 ### [CLICK TO DEMO](https://where-to-next-blog.herokuapp.com/)
